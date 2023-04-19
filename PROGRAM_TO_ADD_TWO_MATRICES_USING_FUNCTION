@@ -1,0 +1,496 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+		 int n1, n2, add, subtract, multiply, mod;
+    float divide;
+    Scanner scanner = new Scanner(System.in);
+    System.out.print("Enter Two Numbers : ");
+    n1 = scanner.nextInt();
+    n2 = scanner.nextInt();
+    add = n1 + n2;
+    subtract = n1 - n2;
+    multiply = n1 * n2;
+    divide = n1 / n2;
+    mod = n1%n2;
+    System.out.println("Sum = " + add);
+    System.out.println("Difference = " + subtract);
+    System.out.println("Multiplication = " + multiply);
+    System.out.println("Division = " + divide);
+    System.out.println("Modulus = "+mod);
+}
+}
+
+Output –                                                      
+Enter Two Numbers: 3
+4
+Sum = 7
+Difference = -1
+Multiplication = 12
+Division = 0.0
+Modulus = 3
+
+PROGRAM 2
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner input = new Scanner(System.in);
+            System.out.print("Input a: ");
+            double a = input.nextDouble();
+            System.out.print("Input b: ");
+            double b = input.nextDouble();
+            System.out.print("Input c: ");
+            double c = input.nextDouble();
+            double result = b * b - 4.0 * a * c;
+            if (result > 0.0) {
+                double r1 = (-b + Math.pow(result, 0.5)) / (2.0 * a);
+                double r2 = (-b - Math.pow(result, 0.5)) / (2.0 * a);
+                System.out.println("The roots are " + r1 + " and " + r2);
+            } else if (result == 0.0) {
+                double r1 = -b / (2.0 * a);
+                System.out.println("The root is " + r1);
+            } else {
+                System.out.println("The equation has no real roots.");
+            }
+    }
+}
+
+Output –
+Input a: 1
+Input b: 2
+Input c: 1
+The root is -1.0 
+
+PROGRAM 3
+import java.util.Scanner; 
+public class Main 
+{ 
+  public static void main (String[]args){
+        Scanner in = new Scanner (System.in); 
+      System.out.print ("Input an alphabet: "); 
+    String input = in.next ().toLowerCase (); 
+    boolean uppercase = input.charAt (0) >= 65 && input.charAt (0) <= 90; 
+    boolean lowercase = input.charAt (0) >= 97 && input.charAt (0) <= 122; 
+    boolean vowels = input.equals ("a") || input.equals ("e") 
+      || input.equals ("i") || input.equals ("o") || input.equals ("u");
+    if (input.length () > 1) 
+      { 
+System.out.println ("Error. Not a single character."); 
+      } 
+    else if (!(uppercase || lowercase)) 
+      { 
+System.out.println 
+ ("Error. Not a letter. Enter uppercase or lowercase letter.");
+  }
+  else if (vowels) 
+      { 
+System.out.println ("Input letter is Vowel"); 
+      } 
+    else 
+      { 
+System.out.println ("Input letter is Consonant"); 
+}
+}
+}
+
+Output –
+Input an alphabet: e
+Input letter is Vowel
+
+...Program finished with exit code 0
+Press ENTER to exit console.
+
+PROGRAM 4
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int count, max, min, i;
+        int[] inp = new int[500];
+   
+        Scanner in = new Scanner(System.in);
+        //take the input of array size by the user
+        System.out.println("Enter number of elements");
+        count = in.nextInt();
+        //enter the array elements by the user
+        System.out.println("Enter " + count + " elements");
+         
+        for(i = 0; i < count; i++) {
+            inp[i] = in.nextInt();
+        }
+   
+        max = min = inp[0];
+         
+        for(i = 1; i < count; i++) {
+            if(inp[i] > max)
+                max = inp[i];
+            else if (inp[i] < min)
+                min = inp[i];
+                
+        }
+        //print the largest and smallest number of array 
+        System.out.println("Largest Number : " + max);
+        System.out.println("Smallest Number : " + min);
+    }
+}
+Output :-
+Enter number of elements
+5
+Enter 5 elements
+4
+6
+1
+8
+9
+Largest Number : 9
+Smallest Number : 1
+
+PROGRAM 5
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    int n, x, flag = 0, i=0;
+	    Scanner sc = new Scanner(System.in);
+	    //take input from by the array size System.out.print("System.out.println("Enet);
+	    System.out.println("Enter no. of elements you want in array : ");
+	    n = sc.nextInt();
+	    int a[] = new int [n];
+	    //enter the all elements of array by the user input
+	    System.out.println("Enter the array elements : ");
+	    for(i=0;i<n;i++)
+	    {
+	        a[i] = sc.nextInt();
+	    }
+	    System.out.println("Enter the elements you want to find : ");
+	    x = sc.nextInt();
+	    for(i=0; i<n; i++)
+	    {
+	        if(a[i] == x)
+	        {
+	            flag = 1;
+	            //System.out.println("elements found at position : "+(i+1));
+	            break;
+	        }
+	        else
+	        {
+	            flag = 0;
+	        }
+	    }
+	    if(flag == 1)
+	    {
+	        System.out.println("Elements found at position :"+(i+1));
+	    }
+	    else{
+	        System.out.println("-1");
+	    }
+	}
+}
+Output:-
+Enter no. of elements you want in array : 
+10
+Enter the array elements : 
+2
+32
+54
+11
+10
+43
+76
+23
+98
+33
+Enter the elements you want to find : 
+76
+Elements found at position :7
+
+PROGRAM 6
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int i,even=0,odd=0;
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		int size = sc.nextInt();
+		
+		int[] elements = new int[size];
+		System.out.println("Enter the elements of array");
+		for(i=0;i<size;i++)
+		{
+		    elements[i]=sc.nextInt();
+		}
+		
+		for(i=0;i<size;i++)
+		{
+		    if(elements[i]%2==0)
+		    even++;
+		    else
+		    odd++;
+		}
+		
+		System.out.println("Number of even elements: " +even);
+		System.out.println("Number of odd elements: " +odd);
+		
+		int[] evenArray = new int[even];
+		int[] oddArray = new int[odd];
+		int j=0,k=0;
+		
+		for(i=0;i<size;i++)
+		{
+		    if(elements[i]%2==0)
+		    evenArray[j++]=elements[i];
+		    else
+		    oddArray[k++]=elements[i];
+		}
+		
+		System.out.println("Even Array");
+                             for(i=0;i<even;i++) 
+		System.out.print(" " +evenArray[i]);
+		
+		System.out.println("\nodd Array");
+		for(i=0;i<odd;i++)
+		System.out.print(" " +oddArray[i]);
+		
+	}
+}
+
+Output – 
+Enter the size of array
+5
+Enter the elements of array
+23
+54
+87
+89
+12
+Number of even elements: 2
+Number of odd elements: 3
+Even Array
+ 54 12
+odd Array
+ 23 87 89
+
+PROGRAM 7
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int i,even=0,odd=0;
+	    Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of array");
+		int size = sc.nextInt();
+		
+		int[] elements = new int[size];
+		System.out.println("Enter the elements of array");
+		for(i=0;i<size;i++)
+		{
+		    elements[i]=sc.nextInt();
+		}
+		
+		System.out.println("Enter the choice 1 or 2");
+		System.out.println("1. Sum of all the elements");
+		System.out.println("2. Sum of alternative elements");
+		int sum=0;
+		int total=0;
+		int choice = sc.nextInt();
+		
+    	switch(choice)
+    	{
+	    case 1:
+	        for(i=0;i<size;i++)
+	        {
+	        sum=sum+elements[i];
+	        }
+	        System.out.println("Sum of all the elements: " +sum);
+	        break;
+	    case 2:
+	        for(i=0;i<size;i++)
+	        {
+	            total=total+elements[i];
+	            i=i+1;
+	        }
+	        System.out.println("Sum of alternative elements: " +total);
+	        break;
+	        
+	        default:
+	        System.out.println("Error");
+    	}
+	}	
+}
+
+Output – 
+Enter the size of array
+5
+Enter the elements of array
+23
+13
+54
+76
+34
+Enter the choice 1 or 2
+
+PROGRAM 8
+public class ComplexNumber{
+
+  //for real and imaginary parts of complex numbers
+  double real, img;
+
+  //constructor to initialize the complex number
+  ComplexNumber(double r, double i){
+
+this.real = r;
+
+this.img = i;
+
+  }
+  public static ComplexNumber sum(ComplexNumber c1, ComplexNumber c2)
+{
+
+//creating a temporary complex number to hold the sum of two numbers
+       ComplexNumber temp = new ComplexNumber(0, 0);
+       temp.real = c1.real + c2.real;
+
+       temp.img = c1.img + c2.img;
+
+       //returning the output complex number
+
+       return temp;
+   }
+   public static void main(String args[]) 
+{
+ComplexNumber c1 = new ComplexNumber(5.5, 4);
+ComplexNumber c2 = new ComplexNumber(1.2, 3.5);
+       ComplexNumber temp = sum(c1, c2);
+       System.out.println("Sum is: "+ temp.real+" + "+ temp.img +"i");
+   }
+}
+
+PROGRAM 9
+
+import java.util.Scanner;
+class area{
+    int length;
+    int breadth;
+    area(int a, int b)
+    {
+         length = a;
+         breadth = b;
+    }
+    public int areareturn()
+    {
+        return length * breadth;
+    }
+}
+public class Rectangle4 {
+    public static void main(String[] args) {
+        Scanner obj = new Scanner(System.in);
+        int a,b;
+        System.out.println("Enter the lenght of Recatangle");
+         a = obj.nextInt();
+        obj.nextLine();
+        System.out.println("Enter the breadth of Recatangle");
+        b = obj.nextInt();
+        area ob1 = new area(a,b);
+        System.out.println("Area = "+ ob1.areareturn());
+    }
+}
+Output –
+ 
+
+
+
+Program No – 12
+Source code –
+import static java.lang.Math.sqrt;
+class Triangle
+{
+ int a,b,c;
+public double getArea()
+{
+    double p=(a+b+c)/2.0;
+    return Math.sqrt(p*(p-a)*(p-b)*(p-c))
+}
+public double getPerimeter()
+{
+ return (a+b+c)/2.0;
+
+}
+}
+class Perimeter
+{
+public static void main(String args[])
+{
+ Triangle t=new Triangle();
+
+ t.a=3;
+
+ t.b=4;
+
+ t.c=5;
+
+ System.out.println("Area of Triangle is: " +t.getArea());
+
+ System.out.println("Perimeter of Triangle is: " +t.getPerimeter());
+}
+}
+
+PROGRAM 10
+class Student {
+    String name;
+    int roll_no;
+}
+
+public class TestStudent {
+    
+    public static void main(String[] args) {
+        Student s = new Student();
+        s.name = "John";
+        s.roll_no = 2;
+        
+        System.out.println("Name is " + s.name + " add roll number is " + s.roll_no);
+    }
+}
+
+PROGRAM 11
+class Shape {
+    void sh()
+    {
+        System.out.println("This is shape ");
+    }
+}
+class Rectangle extends Shape {
+     void rec()
+    {
+        System.out.println("This is rectangle ");
+    }
+}
+class Circel extends Shape{
+    void ci()
+    {
+        System.out.println("This is circel");
+    }
+}
+class Square extends Rectangle{
+    void sq()
+    {
+        System.out.println("Square is Rectangle");
+    }
+}
+
+class TestInheritance3{
+    public static void main(String args[])
+    {
+       Square obj = new Square();
+        obj.sh();
+        obj.rec();
+
+    }
+}
+OUTPUT - 
+ 
